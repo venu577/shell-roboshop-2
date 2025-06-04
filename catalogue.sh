@@ -9,6 +9,8 @@ app_setup
 # Call the app_setup function to create roboshop user and download the application code
 nodejs_setup
 # Call the nodejs_setup function to install Node.js and its dependencies
+systemd_setup
+# Call the systemd_setup function to set up the systemd service for the application
 cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "copying mongodb repo file"
 
