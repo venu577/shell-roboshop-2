@@ -21,7 +21,7 @@ STATUS=$(mongosh --host mongodb.newgenrobots.site --eval 'db.getMongo().getDBNam
        mongosh --host mongodb.newgenrobots.site </app/db/master-data.js &>>$LOG_FILE
        VALIDATE $? "Loading data into MongoDB"
     else
-       echo -e "Data is already loaded ... $Y SKIPPING $N"
+       echo -e "Data is already loaded .. $Y SKIPPING $N"
     fi
 print_time
 # Print the total time taken for script execution
