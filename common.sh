@@ -78,6 +78,19 @@ nodejs_setup(){
     VALIDATE $? "installing nodejs dependencies"
 }
 
+maven_setup(){
+    dnf install maven -y &>>$LOG_FILE
+    VALIDATE $? "Installing Maven and java"
+
+    mvn clean package &>>$LOG_FILE
+    VALIDATE $? "building maven package"
+    # The above command will create a jar file in the target directory
+    # Move the jar file to the current directory and rename it to shipping.jar
+
+    mv target/shipping-1.0.jar shipping.jar
+    VALIDATE $? "moving jar file to current directory"
+}
+
 systemd_setup(){
     cp $SCRIPT_DIR/$app_name.service /etc/systemd/system/$app_name.service &>>$LOG_FILE
     VALIDATE $? "copying $app_name service file"
