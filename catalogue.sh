@@ -23,7 +23,6 @@ STATUS=$(mongosh --host mongodb.newgenrobots.site --eval 'db.getMongo().getDBNam
     else
        echo -e "Data is already loaded ... $Y SKIPPING $N"
     fi
-
 print_time
 # Print the total time taken for script execution
 
